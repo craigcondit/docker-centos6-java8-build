@@ -3,7 +3,7 @@ MAINTAINER ccondit@randomcoder.com
 
 RUN \	
 	yum clean metadata && \
-	yum -y install java-1.8.0-openjdk-devel which tar && \
+	yum -y install java-1.8.0-openjdk-devel which tar rpm-build && \
 	yum clean all
 
 ENV MAVEN_VERSION=3.3.9
