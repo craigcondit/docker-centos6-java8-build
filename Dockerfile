@@ -3,7 +3,9 @@ MAINTAINER ccondit@randomcoder.com
 
 RUN \	
 	yum clean metadata && \
-	yum -y install java-1.8.0-openjdk-devel which tar rpm-build yum-utils && \
+	yum -y install epel-release-6-8 && \
+	yum clean metadata && \
+	yum -y install which tar rpm-build yum-utils python-argparse python-yaml java-1.8.0-openjdk-devel && \
 	yum clean all
 
 ENV MAVEN_VERSION=3.3.9
