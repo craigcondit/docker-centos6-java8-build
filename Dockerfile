@@ -1,14 +1,15 @@
-FROM centos:6.7
+FROM centos:6.9
 MAINTAINER ccondit@randomcoder.com
 
 RUN \	
 	yum clean metadata && \
+	yum -y upgrade && \
 	yum -y install epel-release && \
 	yum clean metadata && \
 	yum -y install which tar rpm-build yum-utils python-argparse python-yaml java-1.8.0-openjdk-devel gcc gcc-c++ createrepo && \
 	yum clean all
 
-ENV MAVEN_VERSION=3.3.9
+ENV MAVEN_VERSION=3.5.3
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk.x86_64
 ENV MAVEN_HOME=/opt/apache-maven-${MAVEN_VERSION}
 
